@@ -500,4 +500,3 @@ const movies = [
     title: 'Shanghai Noon'
   }
 ]
-

@@ -43,6 +43,37 @@ yargs
     },
     handler: ({ title, producer }) => {
       const sortedMovies = [...movies].sort((a, b) => a.id > b.id)
+      const id = sortedMovies[sortedMovies.length - 1].id + 1
+      const movie = { id, producer, title }
+      movies = [...movies, movie]
+      console.log(movies.find(movie => movie.id === id))
+    }
+  })
+  .command({
+    command: 'edit',
+    describe: 'Edit a movie',
+    builder: {
+      id: {
+        alias: 'i',
+        describe: 'Movie ID',
+        type: 'number',
+        demandOption: true
+      },
+      producer: {
+        alias: 'p',
+        describe: 'Film producer',
+        type: 'string',
+        demandOption: true
+      },
+      title: {
+        alias: 't',
+        describe: 'Film title',
+        type: 'string',
+        demandOption: true
+      }
+    },
+    handler: ({ title, producer }) => {
+      const sortedMovies = [...movies].sort((a, b) => a.id > b.id)
       const id = sortedMovies[sortedMovies.lenght - 1].id + 1
       const movie = { id, producer, title }
       movies = [...movies, movie]
