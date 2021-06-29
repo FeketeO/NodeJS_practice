@@ -25,7 +25,7 @@ yargs
     command: 'find',
     describe: 'Find a movies by ID',
     builder: { id },
-    handler: (args) => 
+    handler: (args) =>
       console.log(findMovieById(args.id))
 
   })

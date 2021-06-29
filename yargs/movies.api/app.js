@@ -6,8 +6,9 @@ const {
   producer,
   title
 } = require('./option')
+const { dbFilePath, propName } = require('./config')
 
-const moviesApi = MoviesApi('./database/movies.json', 'movies')
+const moviesApi = MoviesApi(dbFilePath, propName)
 const {
   getAllMovies,
   findMovieById,
@@ -29,7 +30,7 @@ yargs
     command: 'find',
     describe: 'Find a movies by ID',
     builder: { id },
-    handler: (args) => 
+    handler: (args) =>
       console.log(findMovieById(args.id))
 
   })
