@@ -1,16 +1,20 @@
 const yargs = require('yargs')
+const MoviesApi = require('./movies.api')
+const MoviesService = require('./movies_service')
+const {
+  id,
+  producer,
+  title
+} = require('./option')
+
+const moviesApi = MoviesApi('./database/movies.json', 'movies')
 const {
   getAllMovies,
   findMovieById,
   createMovie,
   editMovie,
   removeMovie
-} = require('./movies_service')
-const {
-  id,
-  producer,
-  title
-} = require('./option')
+} = MoviesService(moviesApi)
 
 yargs
   .version('1.0.0')

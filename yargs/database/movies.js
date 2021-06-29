@@ -500,3 +500,7 @@ const movies = [
     title: 'Shanghai Noon'
   }
 ]
+
+module.exports = {
+  movies
+}
