@@ -20,7 +20,7 @@ http.createServer((req, res) => {
     })
     createReadStream('./views/contact.html').pipe(res)
   } else {
-    res.writeHead = (404, {
+    res.writeHead(404, {
       'Content-Type': 'text/html'
     })
     createReadStream('./views/404.html').pipe(res)
